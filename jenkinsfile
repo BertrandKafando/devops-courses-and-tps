@@ -28,7 +28,7 @@ echo "Tests passed"
 stage('Publish Image') {
 steps{
 script {
-docker.withRegistry( '', registryCredential ) {
+docker.withRegistry( '', "e80e8970-524f-4c1f-bb18-d3e94a40b149" ) {
 dockerImage.push()
 }
 }
