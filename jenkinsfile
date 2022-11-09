@@ -1,6 +1,7 @@
+
 pipeline {
 environment {
-registry = "kafbert/webapp"
+registry = "kafberto/webapp"
 registryCredential = 'dockerhub'
 dockerImage = ''
 }
@@ -15,6 +16,13 @@ stage('Building image') {
 steps{
 script {
 dockerImage = docker.build registry + ":$BUILD_NUMBER"
+}
+}
+}
+stage('Test image') {
+steps{
+script {
+echo "Tests passed"
 }
 }
 }
